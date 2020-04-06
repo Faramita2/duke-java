@@ -14,20 +14,23 @@ public class Part1 {
         
         // test countryInfo
         CSVParser parser = fr.getCSVParser();
-        System.out.println(countryInfo(parser, "Germany"));
-        System.out.println(countryInfo(parser, "China"));
+        // System.out.println(countryInfo(parser, "Germany"));
+        // parser = fr.getCSVParser();
+        // System.out.println(countryInfo(parser, "Nauru"));
         
         // test listExportersTwoProducts
-        parser = fr.getCSVParser();
-        listExportersTwoProducts(parser, "gold", "diamonds");
+        // parser = fr.getCSVParser();
+        listExportersTwoProducts(parser, "cotton", "flowers");
         
         // test numberOfExporters
         parser = fr.getCSVParser();
-        System.out.println(numberOfExporters(parser, "gold"));
+        System.out.println(numberOfExporters(parser, "cocoa"));
         
         // test bigExporters
+        // parser = fr.getCSVParser();
+        // bigExporters(parser, "$999,999,999");
         parser = fr.getCSVParser();
-        bigExporters(parser, "$999,999,999");
+        bigExporters(parser, "$999,999,999,999");
     }
     
     String countryInfo(CSVParser parser, String country) {

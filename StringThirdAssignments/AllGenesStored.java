@@ -140,11 +140,27 @@ public class AllGenesStored {
         
     }
     
+    void printCTGNum(String dna) {
+        int start = 0;
+        int count = 0;
+        while (true) {
+            int startIndex = dna.indexOf("CTG", start);
+            if (startIndex == -1) {
+                break;
+            }
+            count++;
+            start = startIndex+3;
+        }
+
+        System.out.println("CTG count: " + count);
+    }
+    
     public void test() {
         //      ATGv  TAAv  ATG   v  v  TGA   
         FileResource dnaFile = new FileResource();
         StorageResource genesFound = getAllGenes( dnaFile.asString().toUpperCase() );
         System.out.println( "Number of genes found: "+genesFound.size() );
         printGenes( genesFound );
+        printCTGNum(dnaFile.asString().toUpperCase());
     }
 }
